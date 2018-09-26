@@ -57,7 +57,7 @@ def show_user_stock_realdealdetail():
     line_pust('時間' + realtime + ',價格 '+ realbid + ',成交量' + realvolumn)
     
 task = PythonOperator(
-    task_id='2492成交即時明細', #設定dag小分支的名稱
+    task_id='2492', #設定dag小分支的名稱
     python_callable=show_user_stock_realdealdetail, #指定要執行的function
     dag=dag #把上方的設定檔案丟入主程式
     )
