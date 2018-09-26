@@ -23,9 +23,9 @@ from linebot.models import *
 ###############################################################################
 
 #自己APP的token
-token=ENV['MYTOKEN']
+#token=ENV['MYTOKEN']
 #自己的ID
-ID=ENV['MYID']
+#ID=ENV['MYID']
 
 ########### dag所有參數，就放在這裡面 ###########
 args = {
@@ -41,8 +41,8 @@ dag = DAG(
 
 ########## 推撥訊息 ##########
 def line_pust(content):
-    line_bot_api = LineBotApi(token)
-    line_bot_api.push_message(ID, TextSendMessage(text=content))
+    line_bot_api = LineBotApi(ENV['MYTOKEN'])
+    line_bot_api.push_message(ENV['MYID'], TextSendMessage(text=content))
 
 ########## 推撥訊息 ##########
 def show_user_stock_realdealdetail():  
