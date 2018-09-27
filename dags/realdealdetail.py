@@ -17,15 +17,16 @@ import requests
 from linebot import (LineBotApi, WebhookHandler, exceptions)
 from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
+from os import environ
 
 ###############################################################################
 #                         股票機器人 Airflow股價自動推波                       #
 ###############################################################################
 
 #自己APP的token
-#token=ENV['MYTOKEN']
+token=os.environ['MYTOKEN']
 #自己的ID
-#ID=ENV['MYID']
+ID=os.environ['MYID']
 
 ########### dag所有參數，就放在這裡面 ###########
 args = {
@@ -41,8 +42,8 @@ dag = DAG(
 
 ########## 推撥訊息 ##########
 def line_pust(content):
-    line_bot_api = LineBotApi(ENV['MYTOKEN'])
-    line_bot_api.push_message(ENV['MYID'], TextSendMessage(text=content))
+    line_bot_api = LineBotApi(token)
+    line_bot_api.push_message(ID, TextSendMessage(text=content))
 
 ########## 推撥訊息 ##########
 def show_user_stock_realdealdetail():  
