@@ -17,7 +17,7 @@ import requests
 from linebot import (LineBotApi, WebhookHandler, exceptions)
 from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
-from os import environ
+import os
 
 ###############################################################################
 #                         股票機器人 Airflow股價自動推波                       #
