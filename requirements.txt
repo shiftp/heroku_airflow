@@ -22,7 +22,7 @@ GitPython==2.1.5
 
 gunicorn==19.3.0
 
-lxml==3.8.0
+lxml==4.6.5
 
 numpy==1.13.1
 
