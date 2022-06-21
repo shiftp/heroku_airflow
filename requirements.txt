@@ -24,7 +24,7 @@ gunicorn==19.3.0
 
 lxml==3.8.0
 
-numpy==1.13.1
+numpy==1.22.0
 
 pandas==0.20.3
 
